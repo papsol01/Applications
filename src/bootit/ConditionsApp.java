@@ -1,3 +1,5 @@
+package bootit;
+
 import java.util.*;
 
 public class ConditionsApp {
@@ -30,9 +32,9 @@ public class ConditionsApp {
 
         public void isItFriday() {
         Calendar now = Calendar.getInstance();
-        //int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+        int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
         int timeOfDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        int dayOfWeek = 6;
+        //int dayOfWeek = 6;
 
         if (dayOfWeek == Calendar.FRIDAY && timeOfDay < 16) {
                 System.out.println();
@@ -216,25 +218,28 @@ public class ConditionsApp {
 
         while (matches > 0) {
             System.out.println();
+            System.out.println("There's now " + matches + " left.");
             System.out.println("How many matches do you want to remove from the table?");
             System.out.println("Player " + currentPlayer);
 
+            if (!scanner.hasNextInt()) {
+                System.out.println("Use numbers!");
+                scanner.nextLine();
+                continue;
+            }
             takenMatches = scanner.nextInt();
 
-            if(takenMatches == 1) {
-                System.out.println("Removed " + takenMatches + " match from table.");
-                System.out.println("There's now " + (matches - takenMatches) + " left.");
-            }
-
-            else if(takenMatches >= 2 && takenMatches <= 3) {
-                System.out.println("Removed " + takenMatches + " matches from table");
-                System.out.println("There's now " + (matches - takenMatches) + " left.");
-            }
-
-            if (takenMatches < 1 || takenMatches > 3) {
+            if (takenMatches < 1 || takenMatches > 3 || takenMatches > matches) {
                 System.out.println("Invalid input! - You can only remove 1 - 3 matches");
                 continue; // Same player tries again.
             }
+
+            if (takenMatches == 1) {
+                System.out.println("Removed " + takenMatches + " match from table.");
+            } else {
+                System.out.println("Removed " + takenMatches + " matches from table");
+            }
+
             matches -= takenMatches;
 
             if (matches == 0) {

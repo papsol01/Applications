@@ -1,17 +1,14 @@
-import java.util.*;
+public class FizzBuzzTestForLoop {
 
-public class FizzBuzzTestForEachLoop {
-
-    public void runFizzBuzzTestForEachLoop() {
-        ArrayList<Integer> numbers = new ArrayList<>();
+    public void runFizzBuzzTestForLoop() {
+        System.out.println();
+        System.out.println("This is the FizzBuzzTest");
+        System.out.println();
 
         for (int i = 1; i <= 100; i++) {
-            numbers.add(i);
-        }
 
-        for (Integer i : numbers) {
             if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzzTest");
+                System.out.println("fizzbuzztest");
             }
             else if (i % 3 == 0) {
                 System.out.println("Fizz");
@@ -23,8 +20,5 @@ public class FizzBuzzTestForEachLoop {
                 System.out.println(i);
             }
         }
-
     }
-
-
 }

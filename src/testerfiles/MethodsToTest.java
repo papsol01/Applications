@@ -1,4 +1,4 @@
-package TheTesterFiles;
+package testerfiles;
 
 public class MethodsToTest {
 
