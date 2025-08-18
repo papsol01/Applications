@@ -1,3 +1,5 @@
+package fizzbuzztest;
+
 import java.util.*;
 
 public class FizzBuzzTestForEachLoop {

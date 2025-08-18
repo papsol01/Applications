@@ -1,3 +1,5 @@
+package bootit;
+
 import java.util.Scanner;
 
 public class VariablesApp {

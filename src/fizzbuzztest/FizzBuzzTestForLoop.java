@@ -1,3 +1,5 @@
+package fizzbuzztest;
+
 public class FizzBuzzTestForLoop {
 
     public void runFizzBuzzTestForLoop() {

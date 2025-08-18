@@ -1,3 +1,5 @@
+package fizzbuzztest;
+
 public class FizzBuzzTestDoWhile {
 
     public void runFizzBuzzTestDoWhile() {

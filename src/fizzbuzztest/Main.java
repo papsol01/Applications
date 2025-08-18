@@ -1,4 +1,4 @@
-
+package fizzbuzztest;
 
 public class Main {
 
