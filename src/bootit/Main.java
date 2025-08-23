@@ -7,7 +7,10 @@ public class Main
     //ConditionsApp test = new ConditionsApp();
     //test.nim();
 
-    VariablesApp v = new VariablesApp();
-    v.askName();
+    //VariablesApp v = new VariablesApp();
+    //v.askName();
+
+    SeatSelector s = new SeatSelector();
+    s.seatSelector();
     }
 }
