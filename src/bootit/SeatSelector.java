@@ -19,8 +19,12 @@ public class SeatSelector {
             while (true) {
                 try {
                     rows = getInput();
-                    System.out.println("Coolio! I’ve computed which rows that must be free now!");
-                    break;
+                    if (rows == 0) {
+                        System.out.println("Please enter a valid row number.");
+                    } else {
+                        System.out.println("Coolio! I’ve computed which rows that must be free now!");
+                        break;
+                    }
                 } catch (InputMismatchException e){
                     System.out.println("Give me a number!");
                     scanner.nextLine();
@@ -32,10 +36,10 @@ public class SeatSelector {
                 System.out.println("Which row would the student like to sit in?");
                 try {
                     int row = getInput();
-                    if (row % 3 == 0) {
+                    if (row % 3 == 0 && row < rows) {
                         System.out.println("That’s an invalid row! That row must be free! Try another one..");
                     } else if (row > rows) {
-                        System.out.printf("Sorry, there is only " + rows + " rows Please try another.");
+                        System.out.println("Sorry, there is only " + rows + " rows Please try another.");
                     } else if (row < 0) {
                         System.out.println("Negative numbers?! Creative… We are teaching IT here, not how to move through matter. Please pick another seat.");
                     } else if (row == 0) {
