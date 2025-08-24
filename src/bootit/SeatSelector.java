@@ -6,8 +6,8 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class SeatSelector {
-    Scanner scanner = new Scanner(System.in);
 
+    Scanner scanner = new Scanner(System.in);
 
     public void seatSelector() {
         int count = 0;
@@ -19,7 +19,7 @@ public class SeatSelector {
             while (true) {
                 try {
                     rows = getInput();
-                    System.out.print("Coolio! I’ve computed which rows that must be free now!");
+                    System.out.println("Coolio! I’ve computed which rows that must be free now!");
                     break;
                 } catch (InputMismatchException e){
                     System.out.println("Give me a number!");
@@ -35,7 +35,7 @@ public class SeatSelector {
                     if (row % 3 == 0) {
                         System.out.println("That’s an invalid row! That row must be free! Try another one..");
                     } else if (row > rows) {
-                        System.out.printf("Sorry, there is only rows" + rows + "?! Please try another.");
+                        System.out.printf("Sorry, there is only " + rows + " rows Please try another.");
                     } else if (row < 0) {
                         System.out.println("Negative numbers?! Creative… We are teaching IT here, not how to move through matter. Please pick another seat.");
                     } else if (row == 0) {
@@ -73,7 +73,7 @@ public class SeatSelector {
     }
 
     private int getInput() throws InvalidNameException {
-        if (scanner.hasNext(Pattern.compile("STOP"))) {
+        if (scanner.hasNext(Pattern.compile("STOP", Pattern.CASE_INSENSITIVE))) {
             throw new InvalidNameException();
         }
 
